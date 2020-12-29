@@ -1,0 +1,21 @@
+<!--users/templates/registration/login.html-->
+
+{% extends 'base.html' %}
+
+{% block content %}
+<div style=" margin-top: 50px; width:450px; height: 400px; border-radius: 10px; box-shadow: 5px 5px 10px rgb(95, 95, 95); background: rgb(160, 154, 154); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px;">
+
+    <div style="width: 300px; height: 300px;  display: flex; flex-direction: column; justify-content: space-around; align-items: center;" class="right-side">
+        <h2 style="font-family: 'Times New Roman', Times, serif;">Login</h2>
+
+        <form style=" font-family: 'Times New Roman', Times, serif;" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input   type="submit"  class="btn btn-primary" value="Login">
+        </form>
+       <p style="font-family: 'Times New Roman', Times, serif;">Don't have  an account yet?  <a style="color: rgb(3, 88, 168); font-family: 'Times New Roman', Times, serif;" href="{% url 'users:register' %}">Register Here</a></p>
+      
+        {% endblock %}
+    </div>
+
+</div>

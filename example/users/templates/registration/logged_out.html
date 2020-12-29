@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1 style="font-family: 'Times New Roman', Times, serif; margin-bottom: 50px;">You're successfully logged out.</h1>
+<a style="margin-top:30px; font-size: 20px; padding: 10px; border-radius: 5px;  font-family: 'Times New Roman', Times, serif; background: red; color:rgb(249, 249, 250);" href="/admin/login/?next=/admin/">Admin login</a>
+
+<a style="margin-top:30px; font-size: 20px; font-family: 'Times New Roman', Times, serif; color:rgb(249, 249, 250);" href="{% url 'users:login' %}" class="btn btn-primary" >Login</a>
+
+
+{% endblock %}

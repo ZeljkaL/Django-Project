@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2 style=" width: 100%; text-align: center; font-family: 'Times New Roman', Times, serif;">Register Now</h2>
+
+<form
+    style="  height: 500px; display: flex; flex-direction: column; justify-content: center; align-items: center;  padding: 50px;"
+    method="post">
+    {% csrf_token %}
+    <div
+        style="border-radius: 20px; box-shadow: 5px 5px 10px #222; background: rgb(160, 154, 154); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px;">
+
+        <div style="  width: 400px; height: 80px; margin: 0; display: flex; justify-content: center; flex-direction: column; align-items: center;"
+            class="form-group">
+            <p style="text-transform: uppercase; font-family: 'Times New Roman', Times, serif; letter-spacing: 1px;"> {{form.username.label}}</p>
+            <p> {{ form.username}}</p>
+
+
+        </div>
+        <div class="form-group"
+            style=" width: 400px;  height: 80px; margin: 0; display: flex; justify-content: center; flex-direction: column; align-items: center;">
+            <p style="text-transform: uppercase; font-family: 'Times New Roman', Times, serif; letter-spacing: 1px;"> {{ form.password1.label}}</p>
+            <p> {{ form.password1}}</p>
+
+
+        </div>
+        <div class="form-group"
+            style="  width: 400px;  height: 80px; margin: 0; display: flex; justify-content: center; flex-direction: column; align-items: center;">
+            <p style="text-transform: uppercase; font-family: 'Times New Roman', Times, serif; letter-spacing: 1px;"> {{ form.password2.label}}</p>
+            <p> {{ form.password2}}</p>
+
+        </div>
+        <div style=" width: 400px;  height: 80px; margin: 0; display: flex; justify-content: center; flex-direction: column; align-items: center;"
+            class="form-group">
+            <p style="text-transform: uppercase; font-family: 'Times New Roman', Times, serif; letter-spacing: 1px;">{{ form.identification.label}}</p>
+            <p>{{ form.identification}}</p>
+
+
+        </div>
+        <input type="submit"
+            style="text-transform: uppercase; box-shadow: 2px 2px 4px #222; font-family: 'Times New Roman', Times, serif;"
+            class="btn btn-success" value="Register">
+    </div>
+
+</form>
+
+
+{% endblock %}

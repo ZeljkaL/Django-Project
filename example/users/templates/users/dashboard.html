@@ -1,0 +1,20 @@
+<!--users/templates/users/dashboard.html-->
+
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 style="font-family: 'Times New Roman', Times, serif; margin-bottom: 50px;">Hello, {{ user.username|default:'Guest' }}!</h1>
+
+<div style="display: flex; flex-direction: column; justify-content:center; align-items: center;">
+    {% if user.is_authenticated %}
+      
+       
+       
+       <h2 style="font-family: 'Times New Roman', Times, serif;">Login Times:   <span style="color:rgb(8, 162, 252);">{{ct}}</span></h2>
+       <a style="margin-top:30px; font-size: 20px; font-family: 'Times New Roman', Times, serif; color:rgb(249, 249, 250);" href="{% url 'users:logout' %}" class="btn btn-primary" >Logout</a>
+    {% else %}
+    <a style="margin-top:30px; font-size: 20px; font-family: 'Times New Roman', Times, serif; color:rgb(249, 249, 250);" href="{% url 'users:login' %}" class="btn btn-primary" >Login</a>
+  
+    {% endif %}
+</div>
+{% endblock %}
